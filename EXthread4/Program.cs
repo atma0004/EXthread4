@@ -11,39 +11,34 @@ namespace Exercise_4Thrads
             Thread Temp = new Thread(temp);
             Temp.Start();
              Temp.Join();
-            }
+            }     
         public static void temp()
             {
-            string a = "C";
-            for (int counter = 0; counter<5; counter++)
+            int count = 0;
+            while (count<3)
                 {
-                Random temprature = new Random();
-                int number = temprature.Next(-20 , 120);
-
-                if (number<0)
-                    
+                string a = "C";
+                for (int counter = 0; counter<1; counter++)
                     {
-                    Console.Write(a+number);
-                    Console.Write("      temprature is low ");
-                    Console.Beep();
-                    Console.Beep();
-                    Console.Beep();
+                    Random temprature = new Random();
+                    int number = temprature.Next(-20 , 120);
+                    if (number<0||number>100)
+                        {
+                        count++;
+                        Console.Write(a+number);
+                        Console.Write("      temprature is low ");
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                        }
+                    Console.WriteLine(a+number);
+                    Thread.Sleep(1000);
                     }
-                else if (number>100)
-                    {
-                    Console.Write(a+number);
-                    
-                    Console.Beep();
-                    Console.Beep();
-                    Console.Beep();
-                    Console.Write("      temprature is too high ");
-                    }
-                Console.WriteLine(a+number);
-                Thread.Sleep(1000);
                 }
-            }
+            Console.WriteLine("Exit");
+            Console.ReadKey();
+            }       
         }
     }
 
 
-    
