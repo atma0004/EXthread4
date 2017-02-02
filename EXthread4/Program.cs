@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading;
 
-namespace EXthread4
+namespace Exercise_4Thrads 
+    
     {
     class Program
         {
@@ -20,6 +21,7 @@ namespace EXthread4
                 int number = temprature.Next(-20 , 120);
 
                 if (number<0)
+                    
                     {
                     Console.Write(a+number);
                     Console.Write("      temprature is low ");
